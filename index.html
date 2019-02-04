@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE-edge">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<head>
+	<title>Vue JS</title>
+</head>
+<body>
+
+	<div id="vue-app">
+		<h1>Punch Mark!</h1>
+		<!-- mark image -->
+		<div id="mark" v-bind:class="{ended:gameover}">
+			<img src="./img/ko.png" class="ko" v-show="gameover">
+		</div>
+
+		<!-- bag health -->
+		<div id="health">
+			<div v-bind:style="{width: health + '%'}"></div>
+		</div>
+
+		<!-- game controls -->
+		<div id="controls">
+			<button v-on:click="punch" v-show="!gameover">Punch</button>
+			<button v-on:click="restart">Restart</button>
+		</div>
+	</div>
+
+
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
